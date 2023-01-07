@@ -8,9 +8,6 @@ function App() {
   useEffect(() => {
     network.getAll().then((res) => setData(res));
   }, []);
-  useEffect(() => {
-    network.getCategories("electronics").then((res) => console.log(res));
-  }, []);
   return (
     <>
       <Button variant="outlined" color="error">

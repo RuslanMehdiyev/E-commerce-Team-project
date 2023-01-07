@@ -21,9 +21,9 @@ export const network = {
       });
     return responseData;
   },
-  getById: async (url, id) => {
+  getById: async (id) => {
     let response = {};
-    await axiosInstance.get(`${url}/${id}`).then((res) => {
+    await axiosInstance.get(`/${id}`).then((res) => {
       response = res.data;
     });
     if (response == null) {
@@ -31,9 +31,10 @@ export const network = {
     }
     return response;
   },
-  getCategories: async (url, category) => {
+  getCategories: async () => {
     let response = {};
-    await axiosInstance.get(`${url}/${category}`).then((res) => {
+    await axiosInstance.get(`/categories`).then((res) => {
+      console.log(res);
       response = res.data;
     });
     if (response == null) {
@@ -41,9 +42,9 @@ export const network = {
     }
     return response;
   },
-  getByCategory: async (url, name) => {
+  getByCategory: async (name) => {
     let response = {};
-    await axiosInstance.get(`${url}/category/${name}`).then((res) => {
+    await axiosInstance.get(`/category/${name}`).then((res) => {
       response = res.data;
     });
     if (response == null) {
