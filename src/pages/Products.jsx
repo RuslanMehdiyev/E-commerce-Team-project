@@ -1,6 +1,12 @@
+import { Outlet } from "react-router-dom"
+
 function Products() {
-  return (
+  return (<>
     <div>Products</div>
+    <Outlet/>
+  </>
+  
+    
   )
 }
 

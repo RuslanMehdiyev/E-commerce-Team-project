@@ -4,7 +4,7 @@ const BASE_URL = "https://fakestoreapi.com/products";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
-  timeout: 2000,
+  timeout: 7000,
 });
 
 export const network = {
