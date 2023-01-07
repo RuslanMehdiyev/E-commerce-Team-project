@@ -1,9 +1,16 @@
 import "./assets/style/main.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { storeContext } from "./context/storeContext";
 import { Button } from "@mui/material";
+import { network } from "./utils/network/network";
 function App() {
-  const { data } = useContext(storeContext);
+  const { setData } = useContext(storeContext);
+  useEffect(() => {
+    network.getAll().then((res) => setData(res));
+  }, []);
+  useEffect(() => {
+    network.getCategories("electronics").then((res) => console.log(res));
+  }, []);
   return (
     <>
       <Button variant="outlined" color="error">
