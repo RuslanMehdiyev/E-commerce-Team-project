@@ -1,7 +1,6 @@
 import "./assets/style/main.css";
 import { useContext, useEffect } from "react";
 import { storeContext } from "./context/storeContext";
-
 import { network } from "./utils/network/network";
 import { Link, Route, Routes, useParams } from "react-router-dom";
 import Home from "./pages/Home";
