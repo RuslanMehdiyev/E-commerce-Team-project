@@ -9,7 +9,7 @@ function Sale() {
     <>
       <Box
         sx={{
-          width: "1330px",
+          width: "90%",
           margin: "40px auto",
           display: "flex",
         }}
@@ -17,7 +17,6 @@ function Sale() {
         <Box
           sx={{
             width: "100%",
-            height: "425px",
             backgroundImage: `url(${salepic})`,
             backgroundRepeat: "no-repeat",
           }}
@@ -27,7 +26,7 @@ function Sale() {
             <Grid
               sx={{
                 textAlign: "center",
-                margin: "50px 200px",
+                margin: "50px auto",
                 display: "flex",
                 flexDirection: "column",
                 gap: "40px",
