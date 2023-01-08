@@ -12,7 +12,7 @@ function Details() {
   const [detailed, setDetailed] = useState([]);
   useEffect(() => {
     network.getById(param.id).then((res) => setDetailed(res));
-  }, []);
+  }, [detailed]);
 
   return (
     <>
@@ -120,11 +120,9 @@ function Details() {
           width: "90%",
         }}
       >
-        <h1 style={{ margin: "20px 110px" }} h1>
-          Related Products
-        </h1>
-        <Slider />
+        <h1 style={{ margin: "20px 110px" }}>Related Products</h1>
       </Box>
+      <Slider />
     </>
   );
 }
