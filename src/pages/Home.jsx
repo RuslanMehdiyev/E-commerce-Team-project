@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-function Home() {
-  return (
-    <div>
-     
-    </div>
-  )
-=======
 import MainContainer from "../components/mainInformation/MainContainer";
 import SliderHead from "../components/carousel/SliderHead";
 import Slider from "../components/carousel/Slider";
@@ -29,7 +21,6 @@ function Home() {
       <DoubleCard />
     </>
   );
->>>>>>> 89008ace81d48bf036eeaa1fa1297912a40575cb
 }
 
 export default Home;

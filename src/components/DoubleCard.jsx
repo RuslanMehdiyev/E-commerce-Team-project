@@ -11,7 +11,7 @@ function DoubleCard() {
         <div className={DoublecardCSS.describtion}>
             <span className={DoublecardCSS.date_button}>22 oct 2021</span>
             <h2 className={DoublecardCSS.title}>Who avoids a<br/>pain that produces?</h2>
-            <p className={DoublecardCSS.text}>Lorem ipsum dolor sit amet consectetur.
+            <p style={{overflow:"hidden"}} className={DoublecardCSS.text}>Lorem ipsum dolor sit amet consectetur.
              Nec sit enim tellus faucibus bibendum ullamcorper. 
              Phasellus tristique aenean at lorem sed scelerisque.</p>
             <span className={DoublecardCSS.href}>By spacing tech</span>
@@ -22,7 +22,7 @@ function DoubleCard() {
         <div className={DoublecardCSS.describtion}>
             <span className={DoublecardCSS.date_button}>22 oct 2021</span>
             <h2 className={DoublecardCSS.title}>Who avoids a<br/>pain that produces?</h2>
-            <p className={DoublecardCSS.text}>Lorem ipsum dolor sit amet consectetur.
+            <p style={{overflow:"hidden"}} className={DoublecardCSS.text}>Lorem ipsum dolor sit amet consectetur.
              Nec sit enim tellus faucibus bibendum ullamcorper. 
              Phasellus tristique aenean at lorem sed scelerisque.</p>
             <span className={DoublecardCSS.href}>By spacing tech</span>
