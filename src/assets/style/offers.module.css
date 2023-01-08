@@ -1,6 +1,8 @@
 .container {
   width: 100%;
   padding: 30px 50px;
+  display: flex;
+  gap: 25px;
 }
 .left_box {
   padding: 60px 30px;
@@ -12,46 +14,87 @@
   gap: 60px;
   align-items: center;
 }
-.detail{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
-    height: 316.12px;
-    gap: 15px;
+.right_box {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
-.title{
-    font-weight: 600;
-    color: #1B5A7D;
+.detail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  height: 316.12px;
+  gap: 15px;
 }
-.stars{
-    width: 150px;
-    margin-bottom: 20px;
+.title {
+  font-weight: 600;
+  color: #1b5a7d;
 }
-.counts span{
-    background-color: #E2F4FF;
-    color: #EDA415;
-    width: 80px;
-    text-align: center;
-    line-height: 80px;
-    height: 80px;
-    font-weight: 600;
-    border-radius: 50%;
+.stars {
+  width: 150px;
+  margin-bottom: 20px;
 }
-.counts{
-    justify-content: space-between;
-    display: flex;
+.counts span {
+  background-color: #e2f4ff;
+  color: #eda415;
+  width: 80px;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-weight: 600;
+  border-radius: 50%;
 }
-.btn{
-    width: 60%;
-    background-color: #87BCD9;
-    border: none;
-    outline: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    border-radius: 15px;
+.counts {
+  justify-content: space-between;
+  display: flex;
 }
-.buttons{
-    display: flex;
+.btn {
+  width: 60%;
+  background-color: #87bcd9;
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  color: black;
+  font-weight: 600;
+}
+.buttons {
+  display: flex;
+}
+.baskett {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eye {
+  width: 20%;
+  border-radius: 15px;
+  border: none;
+  background-color: #87bcd9;
+  margin-left: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.upper {
+  display: flex;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #c8c8c8;
+  gap: 30px;
+  align-items: center;
+  height: 241px;
+}
+
+.joy_about {
+  width: 117.02px;
+  height: 98.12px;
+  color: #1b5a7d;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
