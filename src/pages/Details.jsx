@@ -8,6 +8,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import star from "../assets/detailsIcons/Vector.svg";
 import styles from "../components/header/Header.module.css";
 import { display } from "@mui/system";
+import Slider from "../components/carousel/Slider";
 function Details() {
   const param = useParams();
   const [detailed, setDetailed] = useState([]);
@@ -19,9 +20,9 @@ function Details() {
     <>
       <Box
         sx={{
-          width: "1200px",
+          width: "100%",
           height: "100%",
-          margin: "20px auto",
+          margin: "20px 140px",
           gap: "100px",
           display: "flex",
           alignItems: "center",
@@ -109,11 +110,20 @@ function Details() {
       </Box>
 
       <Box>
-        {/* <Box>
+        <Box>
           <button>Description</button>
           <button>Reviews</button>
-        </Box> */}
-        <Box></Box>
+        </Box>
+        <Box className={styles.description}>
+          <h1>Item Description</h1>
+          <p>{detailed.description}</p>
+        </Box>
+      </Box>
+      <Box>
+        <h1 style={{ margin: "20px 100px" }} h1>
+          Related Products
+        </h1>
+        <Slider />
       </Box>
     </>
   );

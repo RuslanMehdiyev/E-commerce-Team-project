@@ -89,13 +89,23 @@
 .count p {
   font-size: 10px;
 }
-input {
+.inputArea {
   padding-left: 25px;
   border: none;
   outline: none;
   height: 56px;
+  background-color: white !important;
   width: 306px;
   border-radius: 20px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 0.8px solid rgba(118, 115, 115, 0.561);
 }
 .searchButton {
   margin-left: -40px;

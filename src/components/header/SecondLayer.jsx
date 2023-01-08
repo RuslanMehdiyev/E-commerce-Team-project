@@ -12,7 +12,11 @@ function SecondLayer() {
         <img className={styles.logoName} src={logo} />
       </Box>
       <Box sx={{ display: "flex" }}>
-        <input placeholder="Search any image" type="text" />
+        <input
+          className={styles.inputArea}
+          placeholder="Search any image"
+          type="text"
+        />
         <button className={styles.searchButton}>Search</button>
       </Box>
       <Box

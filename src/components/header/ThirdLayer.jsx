@@ -54,9 +54,17 @@ function ThirdLayer() {
       >
         {categories.map((element) => {
           return (
-            <MenuItem key={element} onClick={() => handleClose(element)}>
-              {element.toUpperCase()}
-            </MenuItem>
+            <Link
+              style={{
+                color: "black",
+              }}
+              key={element}
+              to={"/products"}
+            >
+              <MenuItem onClick={() => handleClose(element)}>
+                {element.toUpperCase()}
+              </MenuItem>
+            </Link>
           );
         })}
       </Menu>
@@ -84,13 +92,7 @@ function ThirdLayer() {
           {" "}
           <h2>Products</h2>
         </Link>
-        <Link
-          style={{
-            color: "black",
-          }}
-        >
-          <h2>Details</h2>
-        </Link>
+
         <h2> Blog </h2>
         <h2> About Us </h2>
       </Box>

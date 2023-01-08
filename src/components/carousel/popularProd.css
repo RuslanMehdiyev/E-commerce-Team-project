@@ -32,11 +32,11 @@
 .card {
   width: 100%;
   text-align: center;
-  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 .card-content {
+  position: relative;
   border: 1px solid black;
   border-radius: 20px;
   display: flex;
@@ -67,8 +67,8 @@
 }
 .card .vector-heart {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
   padding: 10px;
   border-radius: 50%;
   background-color: #84b5cf;
@@ -129,7 +129,8 @@ img:hover {
 }
 .prod-container {
   max-width: 90%;
-  display: flex;
+
+  justify-content: space-around;
   margin: 0 auto;
   margin-bottom: 1rem;
   gap: 1rem;
@@ -138,12 +139,23 @@ img:hover {
   width: 25%;
   margin-top: 2rem;
   display: flex;
+  font-size: 2rem;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+}
+form {
+  display: flex;
+  align-items: center;
 }
 .form form label {
   margin: 1rem;
   font-size: 18px;
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -167,6 +179,9 @@ img:hover {
   .form {
     width: 100%;
   }
+  form {
+    flex-direction: column;
+  }
 }
 @media only screen and (min-width: 768px) {
   .card {
@@ -174,6 +189,9 @@ img:hover {
   }
   .form {
     width: 100%;
+  }
+  form {
+    flex-direction: row;
   }
 }
 @media only screen and (min-width: 992px) {

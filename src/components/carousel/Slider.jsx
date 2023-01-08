@@ -8,6 +8,7 @@ import heart from "../../assets/productIcon/Vector.svg";
 import star from "../../assets/productIcon/star.svg";
 import cart from "../../assets/productIcon/cart.svg";
 import eye from "../../assets/productIcon/eye.svg";
+import { Link } from "react-router-dom";
 
 function PopularProd() {
   const { data, selectedCategories } = useContext(storeContext);
@@ -57,55 +58,75 @@ function PopularProd() {
           {data.map(
             (item) =>
               item.category === selectedCategories && (
-                <div className="card" key={item.id}>
-                  <div
-                    className="card-content"
-                    onMouseEnter={() => {
-                      setStyle(item);
-                    }}
-                    onMouseLeave={() => setStyle("false")}
-                  >
-                    <div className="ca  rd-top">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="main-img"
-                      />
-                      <img src={heart} alt="" className="vector-heart" />
-                    </div>
-                    <div className="card-bottom">
-                      <div
-                        style={{
-                          display: displayStyle === item ? "none" : "",
-                        }}
-                      >
-                        <h2>{item.title.substring(0, 10)}</h2>
-                        <p>$ {item.price}</p>
-                        <div className="stars">
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                        </div>
+                <Link
+                  key={item.id}
+                  style={{
+                    color: "black",
+                  }}
+                  to={`/products/${item.id}`}
+                >
+                  <div className="card">
+                    <div
+                      className="card-content"
+                      onMouseEnter={() => {
+                        setStyle(item);
+                      }}
+                      onMouseLeave={() => setStyle("false")}
+                    >
+                      <div className="ca  rd-top">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="main-img"
+                        />
+                        <img src={heart} alt="" className="vector-heart" />
                       </div>
-                      <div
-                        className="add"
-                        style={{
-                          display: displayStyle === item ? "flex" : "none",
-                        }}
-                      >
-                        <div className="addToCart">
-                          <button>Add to cart</button>
-                          <img src={cart} alt="" />
+                      <div className="card-bottom">
+                        <div
+                          style={{
+                            display: displayStyle === item ? "none" : "",
+                          }}
+                        >
+                          <h2
+                            style={{
+                              color: "black",
+                            }}
+                          >
+                            {item.title.substring(0, 10)}
+                          </h2>
+                          <p
+                            style={{
+                              color: "black",
+                            }}
+                          >
+                            $ {item.price}
+                          </p>
+                          <div className="stars">
+                            <img src={star} />
+                            <img src={star} />
+                            <img src={star} />
+                            <img src={star} />
+                            <img src={star} />
+                          </div>
                         </div>
-                        <div className="eye">
-                          <img src={eye} alt="" />
+                        <div
+                          className="add"
+                          style={{
+                            display: displayStyle === item ? "flex" : "none",
+                          }}
+                        >
+                          <div className="addToCart">
+                            <button>Add to cart</button>
+                            <img src={cart} alt="" />
+                          </div>
+                          <div className="eye">
+                            <img src={eye} alt="" />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               )
           )}
         </Slider>
