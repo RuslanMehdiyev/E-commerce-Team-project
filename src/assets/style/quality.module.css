@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  padding: 30px 50px;
+}
+.quality_board {
+  background-color: #e2f4ff;
+  color: #1b5a7d;
+  border-radius: 20px;
+  padding: 25px 50px;
+  justify-content: space-around;
+  display: flex;
+}
+.quality {
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+  }
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+}
+.title {
+  font-weight: 600;
+  font-size: 18px;
+}

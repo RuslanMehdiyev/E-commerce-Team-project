@@ -1,0 +1,14 @@
+.container {
+  background-color: white;
+  width: 100%;
+  padding: 60px 50px;
+  display: flex;
+}
+.brands {
+  display: flex;
+  justify-content: space-between;
+  background-color: #E2F4FF;
+  width: 100%;
+  padding: 30px;
+  align-items: center;
+}

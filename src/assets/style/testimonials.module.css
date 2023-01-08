@@ -1,0 +1,40 @@
+.container{
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    gap: 15px;
+}
+.testimonial{
+    width: 33%;   
+    border-radius: 20px;
+    border: 1px solid #C8C8C8;
+    padding: 13px;
+    color: #1B5A7D;
+}
+.person{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.fullname{
+    text-align: center;
+    margin-left: 45px;
+    font-weight: 600;
+}
+.image{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.text{
+    background-color: #E2F4FF;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+height: 82.26px;
+}

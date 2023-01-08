@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  padding: 30px 50px;
+}
+.left_box {
+  padding: 60px 30px;
+  display: flex;
+  gap: 20px;
+  width: 60%;
+  border: 1px solid #c8c8c8;
+  border-radius: 15px;
+ 
+  gap: 60px;
+  align-items: center;
+}
+.detail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    height: 316.12px;
+    /* color: #1B5A7D; */
+}
+.title{
+    font-weight: 600;
+    color: #1B5A7D;
+}
