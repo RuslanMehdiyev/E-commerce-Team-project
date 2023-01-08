@@ -2,12 +2,10 @@ import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { Outlet, useParams } from "react-router-dom";
-import DetailsCard from "../components/detailscard/detailsCard";
 import { network } from "../utils/network/network";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import star from "../assets/detailsIcons/Vector.svg";
 import styles from "../components/header/Header.module.css";
-import { display } from "@mui/system";
 import Slider from "../components/carousel/Slider";
 function Details() {
   const param = useParams();
@@ -20,13 +18,12 @@ function Details() {
     <>
       <Box
         sx={{
-          width: "100%",
+          width: "50%",
           height: "100%",
-          margin: "20px 140px",
+          margin: "50px auto",
           gap: "100px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
         }}
       >
         <Box
@@ -48,7 +45,6 @@ function Details() {
         </Box>
         <Box
           sx={{
-            flex: "1",
             display: "flex",
             flexDirection: "column",
             gap: "30px",
@@ -109,18 +105,22 @@ function Details() {
         </Box>
       </Box>
 
-      <Box>
+      <Box className={styles.descriptionContainer}>
         <Box>
-          <button>Description</button>
-          <button>Reviews</button>
+          <button className={styles.descriptionBtn}>Description</button>
         </Box>
         <Box className={styles.description}>
           <h1>Item Description</h1>
           <p>{detailed.description}</p>
         </Box>
       </Box>
-      <Box>
-        <h1 style={{ margin: "20px 100px" }} h1>
+      <Box
+        sx={{
+          margin: "0 auto",
+          width: "90%",
+        }}
+      >
+        <h1 style={{ margin: "20px 110px" }} h1>
           Related Products
         </h1>
         <Slider />

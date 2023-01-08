@@ -100,12 +100,34 @@
 }
 .description {
   display: flex;
+  padding: 30px;
   flex-direction: column;
+  color: #003f62;
+  gap: 10px;
   width: 90%;
-  height: 200px;
+
   margin: 0 auto;
   border-radius: 20px;
   border: 0.8px solid rgba(118, 115, 115, 0.561);
+}
+.description p {
+  color: #4f4f4f;
+}
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  gap: 20px;
+  margin: 0 auto;
+}
+.descriptionBtn {
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  background-color: #003f62;
+
+  padding: 15px 20px;
 }
 .searchButton {
   margin-left: -40px;
