@@ -17,9 +17,9 @@ function Offers() {
                 <img className={offersCSS.stars} src={stars}/>
                 <div className={offersCSS.counts}>
                     <span>57</span>
-                    <span>57</span>
-                    <span>57</span>
-                    <span>57</span>
+                    <span>11</span>
+                    <span>33</span>
+                    <span>59</span>
                 </div>
                 <div className={offersCSS.buttons}>
                 <button className={offersCSS.btn}>Add to cart<span><img src={basket}/></span></button>

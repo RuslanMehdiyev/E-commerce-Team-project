@@ -9,7 +9,6 @@
   width: 60%;
   border: 1px solid #c8c8c8;
   border-radius: 15px;
- 
   gap: 60px;
   align-items: center;
 }
@@ -19,9 +18,40 @@
     width: 100%;
     padding: 10px;
     height: 316.12px;
-    /* color: #1B5A7D; */
+    gap: 15px;
 }
 .title{
     font-weight: 600;
     color: #1B5A7D;
+}
+.stars{
+    width: 150px;
+    margin-bottom: 20px;
+}
+.counts span{
+    background-color: #E2F4FF;
+    color: #EDA415;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+    height: 80px;
+    font-weight: 600;
+    border-radius: 50%;
+}
+.counts{
+    justify-content: space-between;
+    display: flex;
+}
+.btn{
+    width: 60%;
+    background-color: #87BCD9;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 15px;
+}
+.buttons{
+    display: flex;
 }
