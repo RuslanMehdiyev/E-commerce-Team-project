@@ -6,8 +6,9 @@
 }
 .brands {
   display: flex;
+  overflow: hidden;
   justify-content: space-between;
-  background-color: #E2F4FF;
+  background-color: #e2f4ff;
   width: 100%;
   padding: 30px;
   align-items: center;
