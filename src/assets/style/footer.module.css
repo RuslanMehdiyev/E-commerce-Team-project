@@ -42,7 +42,20 @@ input{
     background-color: #EDA415;
     outline: none;
     border: none;
+    color: white;
 }
+::placeholder {
+    color: white;
+    opacity: 1; 
+  }
+  
+  :-ms-input-placeholder { 
+   color: white;
+  }
+  
+  ::-ms-input-placeholder { 
+   color: white;
+  }
 .logo_sec{
     display: flex;
     flex-direction: column;
