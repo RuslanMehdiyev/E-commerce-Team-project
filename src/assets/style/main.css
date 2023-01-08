@@ -10,3 +10,7 @@
   list-style: none;
   font-family: Poppins;
 }
+/* responsive */
+body {
+  width: 100%;
+}
