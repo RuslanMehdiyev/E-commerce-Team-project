@@ -68,13 +68,7 @@ function ThirdLayer() {
           );
         })}
       </Menu>
-      <Box
-        sx={{
-          display: "flex",
-          gap: "60px",
-          alignItems: "center",
-        }}
-      >
+      <Box className={styles.menuLine}>
         <Link
           style={{
             color: "black",

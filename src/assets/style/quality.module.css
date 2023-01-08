@@ -11,10 +11,10 @@
   display: flex;
 }
 .quality {
-    width: 23%;
-    display: flex;
-    justify-content: space-between;
-  }
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+}
 .about {
   display: flex;
   flex-direction: column;
@@ -23,7 +23,21 @@
   gap: 5px;
   padding: 10px;
 }
+.image {
+  width: 80%;
+}
 .title {
   font-weight: 600;
   font-size: 18px;
+}
+@media only screen and (max-width: 900px) {
+  .image {
+    width: 40%;
+  }
+  .quality_board {
+    flex-direction: column;
+  }
+  .quality {
+    width: 60%;
+  }
 }

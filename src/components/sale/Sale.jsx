@@ -8,40 +8,35 @@ function Sale() {
   return (
     <>
       <Box
+        className={styles.saleContainer}
         sx={{
-          width: "90%",
-          margin: "40px auto",
-          display: "flex",
+          backgroundImage: `url(${salepic})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          width: "100%",
+          borderRadius: "20px",
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            backgroundImage: `url(${salepic})`,
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <Grid container spacing={2}>
-            <Grid item xs={4}></Grid>
-            <Grid
-              sx={{
-                textAlign: "center",
-                margin: "50px auto",
-                display: "flex",
-                flexDirection: "column",
-                gap: "40px",
-                alignItems: "center",
-              }}
-              item
-              xs={4}
-            >
-              <button className={styles.btnish}> New Laptop</button>
-              <p className={styles.saleinfo}>Sale up to 50% off</p>
-              <p className={styles.white}> 12 inch hd display</p>
-              <button className={styles.btnish}>Shop now</button>
-            </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={4}></Grid>
+          <Grid
+            sx={{
+              textAlign: "center",
+              margin: "50px auto",
+              display: "flex",
+              flexDirection: "column",
+              gap: "40px",
+              alignItems: "center",
+            }}
+            item
+            xs={4}
+          >
+            <button className={styles.btnish}> New Laptop</button>
+            <p className={styles.saleinfo}>Sale up to 50% off</p>
+            <p className={styles.white}> 12 inch hd display</p>
+            <button className={styles.btnish}>Shop now</button>
           </Grid>
-        </Box>
+        </Grid>
       </Box>
     </>
   );

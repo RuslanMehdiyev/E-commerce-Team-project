@@ -16,6 +16,7 @@ function SecondLayer() {
           className={styles.inputArea}
           placeholder="Search any image"
           type="text"
+          color="black"
         />
         <button className={styles.searchButton}>Search</button>
       </Box>

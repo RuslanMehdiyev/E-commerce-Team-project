@@ -19,14 +19,18 @@
   color: #1b5a7d;
   font-weight: 700;
   margin-bottom: 10px;
-}
-.cameraContainer {
   position: relative;
+}
+
+.cameraPicture {
+  width: 100%;
+  min-width: 300px;
+  max-width: 700px;
 }
 .circle {
   position: absolute;
-  bottom: 50px;
-  right: 15px;
+  bottom: 100px;
+  right: 175px;
   text-align: center;
   padding: 15px 20px;
   border: none;
@@ -60,6 +64,7 @@
 .secondLayer {
   background-color: #003f62;
   display: flex;
+  width: 100%;
   /* flex-wrap: nowrap; */
   flex-direction: row;
   justify-content: space-around;
@@ -93,10 +98,14 @@
   padding-left: 25px;
   border: none;
   outline: none;
+  color: black !important;
   height: 56px;
   background-color: white !important;
-  width: 306px;
+  width: 240%;
   border-radius: 20px;
+}
+::placeholder {
+  color: black !important;
 }
 .description {
   display: flex;
@@ -134,7 +143,7 @@
   border: none;
   border-radius: 20px;
   color: white;
-  width: 132px;
+  width: 232px;
   height: 56px;
   left: 306px;
   background: #eda415;
@@ -149,4 +158,41 @@
 }
 button:hover {
   filter: contrast(0.9);
+}
+.menuLine {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.saleContainer {
+  width: 100%;
+  margin: 40px auto;
+  display: flex;
+  border-radius: 20px;
+}
+@media only screen and (max-width: 1200px) {
+  .saleContainer {
+    width: 70% !important;
+    margin: 10% auto;
+    font-size: 20px !important;
+  }
+  .saleinfo {
+    font-size: 20px;
+  }
+  .saleContainer button {
+    font-size: 15px;
+  }
+  .menuLine {
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 15px;
+  }
+  .MainContainerDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cameraPicture {
+    display: none;
+  }
 }

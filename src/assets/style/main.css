@@ -11,3 +11,8 @@
   font-family: Poppins;
 }
 /* responsive */
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}

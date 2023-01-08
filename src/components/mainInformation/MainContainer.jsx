@@ -6,11 +6,14 @@ function MainContainer() {
   return (
     <>
       <Box
+        className={styles.MainContainerDiv}
         sx={{
+          width: "100%",
           margin: "60px 30px",
           display: "flex",
           gap: "120px",
-          justifyContent: "space-evenly",
+
+          justifyContent: "space-around",
         }}
       >
         <Box>
@@ -18,7 +21,7 @@ function MainContainer() {
           <h1 className={styles.camera}>camera</h1>
           <Box
             sx={{
-              gap: "30px",
+              gap: "10px",
               display: "flex",
               flexDirection: "row",
             }}
@@ -28,8 +31,8 @@ function MainContainer() {
           </Box>
         </Box>
         <Box className={styles.cameraContainer}>
-          <img src={salepic} alt="" />
-          <button className={styles.circle}>Only $89</button>
+          <img className={styles.cameraPicture} src={salepic} alt="" />
+          {/* <button className={styles.circle}>Only $89</button> */}
         </Box>
       </Box>
     </>
