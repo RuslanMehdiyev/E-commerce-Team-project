@@ -1,7 +1,8 @@
+import MainContainer from "../components/mainInformation/MainContainer";
+import Sale from "../components/sale/Sale";
+
 function Home() {
-  return (
-    <div>Home</div>
-  )
+  return <></>;
 }
 
-export default Home
+export default Home;

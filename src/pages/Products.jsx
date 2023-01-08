@@ -1,13 +1,11 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 function Products() {
-  return (<>
-    <div>Products</div>
-    <Outlet/>
-  </>
-  
-    
-  )
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
 
-export default Products
+export default Products;
