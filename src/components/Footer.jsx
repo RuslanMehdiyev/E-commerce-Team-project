@@ -1,8 +1,6 @@
 function Footer() {
   return (
-    <>
-    <h1>Burasi footerdi</h1>
-    </>
+    <div>Footer</div>
   )
 }
 

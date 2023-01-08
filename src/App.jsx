@@ -10,7 +10,7 @@ import Details from "./pages/Details";
 import Layout from "./Layout/Layout";
 
 function App() {
-  const { setData } = useContext(storeContext);
+  const {data, setData } = useContext(storeContext);
   useEffect(() => {
     network.getAll().then((res) => setData(res));
   }, []);

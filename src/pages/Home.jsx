@@ -1,7 +1,13 @@
+import Carousel from "../components/carousel/Carousel";
+import Slider from "../components/carousel/Slider";
+import SliderHead from "../components/carousel/SliderHead";
+
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Carousel />
+    </>
+  );
 }
 
-export default Home
+export default Home;

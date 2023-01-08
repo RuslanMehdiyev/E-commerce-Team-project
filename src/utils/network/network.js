@@ -34,7 +34,6 @@ export const network = {
   getCategories: async () => {
     let response = {};
     await axiosInstance.get(`/categories`).then((res) => {
-      console.log(res);
       response = res.data;
     });
     if (response == null) {
