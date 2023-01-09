@@ -152,10 +152,12 @@ form {
 .form form label {
   margin: 1rem;
   font-size: 18px;
+  cursor: pointer;
 }
 input[type="radio"] {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

@@ -3,11 +3,14 @@ import star from "../../assets/productIcon/star.svg";
 import cart from "../../assets/productIcon/cart.svg";
 import eye from "../../assets/productIcon/eye.svg";
 import "../carousel/popularProd.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { storeContext } from "../../context/storeContext";
 
 function List({ item }) {
   const [displayStyle, setStyle] = useState("");
+  const { setSelectedCategories } = useContext(storeContext);
+
 
   return (
     <>
@@ -16,6 +19,7 @@ function List({ item }) {
           color: "black",
         }}
         to={`/products/${item.id}`}
+        onClick={()=>setSelectedCategories(item.category)}
       >
         <div
           className="card-content"

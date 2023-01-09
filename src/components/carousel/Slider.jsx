@@ -9,9 +9,10 @@ import star from "../../assets/productIcon/star.svg";
 import cart from "../../assets/productIcon/cart.svg";
 import eye from "../../assets/productIcon/eye.svg";
 import { Link } from "react-router-dom";
+import Load from "../loading/Load";
 
 function PopularProd() {
-  const { data, selectedCategories } = useContext(storeContext);
+  const { data, selectedCategories, load } = useContext(storeContext);
   const [displayStyle, setStyle] = useState("");
 
   const settings = {
@@ -53,84 +54,89 @@ function PopularProd() {
 
   return (
     <>
-      <div className="container">
-        <Slider {...settings}>
-          {data.map(
-            (item) =>
-              item.category === selectedCategories && (
-                <Link
-                  key={item.id}
-                  style={{
-                    color: "black",
-                  }}
-                  to={`/products/${item.id}`}
-                >
-                  <div className="card">
-                    <div
-                      className="card-content"
-                      onMouseEnter={() => {
-                        setStyle(item);
-                      }}
-                      onMouseLeave={() => setStyle("false")}
-                    >
-                      <div className="ca  rd-top">
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="main-img"
-                        />
-                        <img src={heart} alt="" className="vector-heart" />
-                      </div>
-                      <div className="card-bottom">
-                        <div
-                          style={{
-                            display: displayStyle === item ? "none" : "",
-                          }}
-                        >
-                          <h2
-                            style={{
-                              color: "black",
-                            }}
-                          >
-                            {item.title.substring(0, 10)}
-                          </h2>
-                          <p
-                            style={{
-                              color: "black",
-                            }}
-                          >
-                            $ {item.price}
-                          </p>
-                          <div className="stars">
-                            <img src={star} />
-                            <img src={star} />
-                            <img src={star} />
-                            <img src={star} />
-                            <img src={star} />
-                          </div>
+      {load ? (
+        <Load />
+      ) : (
+        <div className="container">
+          <Slider {...settings}>
+            {data.map(
+              (item) =>
+                item.category === selectedCategories && (
+                  <Link
+                    key={item.id}
+                    style={{
+                      color: "black",
+                    }}
+                    to={`/products/${item.id}`}
+                  >
+                    <div className="card">
+                      <div
+                        className="card-content"
+                        onMouseEnter={() => {
+                          setStyle(item);
+                        }}
+                        onMouseLeave={() => setStyle("false")}
+                        onClick={() => window.scrollTo(180, 180)}
+                      >
+                        <div className="card-top">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="main-img"
+                          />
+                          <img src={heart} alt="" className="vector-heart" />
                         </div>
-                        <div
-                          className="add"
-                          style={{
-                            display: displayStyle === item ? "flex" : "none",
-                          }}
-                        >
-                          <div className="addToCart">
-                            <button>Add to cart</button>
-                            <img src={cart} alt="" />
+                        <div className="card-bottom">
+                          <div
+                            style={{
+                              display: displayStyle === item ? "none" : "",
+                            }}
+                          >
+                            <h2
+                              style={{
+                                color: "black",
+                              }}
+                            >
+                              {item.title.substring(0, 10)}
+                            </h2>
+                            <p
+                              style={{
+                                color: "black",
+                              }}
+                            >
+                              $ {item.price}
+                            </p>
+                            <div className="stars">
+                              <img src={star} />
+                              <img src={star} />
+                              <img src={star} />
+                              <img src={star} />
+                              <img src={star} />
+                            </div>
                           </div>
-                          <div className="eye">
-                            <img src={eye} alt="" />
+                          <div
+                            className="add"
+                            style={{
+                              display: displayStyle === item ? "flex" : "none",
+                            }}
+                          >
+                            <div className="addToCart">
+                              <button>Add to cart</button>
+                              <img src={cart} alt="" />
+                            </div>
+                            <div className="eye">
+                              <img src={eye} alt="" />
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              )
-          )}
-        </Slider>
-      </div>
+                  </Link>
+                )
+            )}
+          </Slider>
+        </div>
+      )}
     </>
   );
 }

@@ -7,6 +7,7 @@ import Quality from "../components/Quality";
 import Testimonials from "../components/Testimonials";
 import Brands from "../components/Brands";
 import DoubleCard from "../components/DoubleCard";
+import Load from "../components/loading/Load";
 function Home() {
   return (
     <>

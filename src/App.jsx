@@ -9,10 +9,14 @@ import Details from "./pages/Details";
 import Layout from "./Layout/Layout";
 
 function App() {
-  const { setData, setCategories } = useContext(storeContext);
+  const { setData, setCategories, setLoad } = useContext(storeContext);
 
   useEffect(() => {
-    network.getAll().then((res) => setData(res));
+    setLoad(true);
+    network
+      .getAll()
+      .then((res) => setData(res))
+      .then(setLoad(false));
     network.getCategories().then((res) => setCategories(res));
   }, []);
 

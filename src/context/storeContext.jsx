@@ -7,6 +7,8 @@ export const StoreProvider = ({ children }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState("electronics");
+  const [load, setLoad] = useState(true);
+
   const values = {
     data,
     setData,
@@ -18,6 +20,8 @@ export const StoreProvider = ({ children }) => {
     setFilteredData,
     selectedCategories,
     setSelectedCategories,
+    load,
+    setLoad,
   };
 
   return (
