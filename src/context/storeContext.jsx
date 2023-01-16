@@ -5,9 +5,13 @@ export const StoreProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [filterBy, setFilterBy] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [favorites, setFavorites] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState("electronics");
+
   const values = {
+    favorites,
+    setFavorites,
     data,
     setData,
     categories,

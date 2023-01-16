@@ -11,3 +11,8 @@
   font-family: Poppins;
 }
 /* responsive */
+
+.heartImg {
+  position: absolute;
+  width: 30px;
+}
