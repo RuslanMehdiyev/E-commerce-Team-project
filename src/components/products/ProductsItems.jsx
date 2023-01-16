@@ -6,8 +6,15 @@ import "../carousel/popularProd.css";
 import List from "./List";
 import SliderHead from "../carousel/SliderHead";
 function ProductsItems() {
-  const { filterBy, filteredData, setFilteredData, data, setFilterBy } =
-    useContext(storeContext);
+  const {
+    filterBy,
+    filteredData,
+    setFilteredData,
+    data,
+    setFilterBy,
+    favorites,
+    setFavorites,
+  } = useContext(storeContext);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     network.getByCategory(filterBy).then((res) => setFilteredData(res));
@@ -15,6 +22,7 @@ function ProductsItems() {
   useEffect(() => {
     network.getCategories().then((res) => setCategories(res));
   }, []);
+
   return (
     <>
       <div className="prod-container">
@@ -56,11 +64,13 @@ function ProductsItems() {
         <div className="card">
           {filteredData
             ? filteredData.map((item) => {
-                return <List item={item} key={item.id} />;
+                let check1 = favorites.find((t) => t.id == item.id);
+                return <List item={item} key={item.id} check1={check1}/>;
               })
             : data &&
               data.map((item) => {
-                return <List item={item} key={item.id} />;
+                let check2 = favorites.find((t) => t.id == item.id);
+                return <List item={item} key={item.id} check2={check2}/>;
               })}
         </div>
       </div>

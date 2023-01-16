@@ -18,6 +18,9 @@ function PopularProd() {
   const getFavorites = (item) => {
     setFavorites([...favorites, item]);
   };
+  const removeFav = (item) => {
+    setFavorites(favorites.filter((e) => e.id !== item.id));
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -59,85 +62,93 @@ function PopularProd() {
     <>
       <div className="container">
         <Slider {...settings}>
-          {data.map(
-            (item) =>
-              item.category === selectedCategories && (
-                <div className="card">
-                  <div
-                    className="card-content"
-                    onMouseEnter={() => {
-                      setStyle(item);
-                    }}
-                    onMouseLeave={() => setStyle("false")}
-                  >
-                    <div className="ca  rd-top">
-                      <Link
-                        key={item.id}
-                        style={{
-                          color: "black",
-                        }}
-                        to={`/products/${item.id}`}
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="main-img"
-                        />
-                      </Link>
+          {data.map((item) => {
+            let check = favorites.find((e) => e.id === item.id);
+            console.log(check);
+            item.category === selectedCategories && (
+              <div className="card">
+                <div
+                  className="card-content"
+                  onMouseEnter={() => {
+                    setStyle(item);
+                  }}
+                  onMouseLeave={() => setStyle("false")}
+                >
+                  <div className="ca  rd-top">
+                    <Link
+                      key={item.id}
+                      style={{
+                        color: "black",
+                      }}
+                      to={`/products/${item.id}`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="main-img"
+                      />
+                    </Link>
+                    {check ? (
+                      <i
+                        className="fa-solid fa-heart-crack heartImg"
+                        onClick={() => removeFav(item)}
+                      ></i>
+                    ) : (
                       <img
                         onClick={() => getFavorites(item)}
                         src={heart}
                         alt=""
                         className="vector-heart"
                       />
-                    </div>
-                    <div className="card-bottom">
-                      <div
+                    )}
+                  </div>
+                  <div className="card-bottom">
+                    <div
+                      style={{
+                        display: displayStyle === item ? "none" : "",
+                      }}
+                    >
+                      <h2
                         style={{
-                          display: displayStyle === item ? "none" : "",
+                          color: "black",
                         }}
                       >
-                        <h2
-                          style={{
-                            color: "black",
-                          }}
-                        >
-                          {item.title.substring(0, 10)}
-                        </h2>
-                        <p
-                          style={{
-                            color: "black",
-                          }}
-                        >
-                          $ {item.price}
-                        </p>
-                        <div className="stars">
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                          <img src={star} />
-                        </div>
+                        {item.title.substring(0, 10)}
+                      </h2>
+                      <p
+                        style={{
+                          color: "black",
+                        }}
+                      >
+                        $ {item.price}
+                      </p>
+                      <div className="stars">
+                        <img src={star} />
+                        <img src={star} />
+                        <img src={star} />
+                        <img src={star} />
+                        <img src={star} />
                       </div>
-                      <div
-                        className="add"
-                        style={{
-                          display: displayStyle === item ? "flex" : "none",
-                        }}
-                      >
-                        <div className="addToCart">
-                          <button>Add to cart</button>
-                          <img src={cart} alt="" />
-                        </div>
-                        <div className="eye">
-                          <img src={eye} alt="" />
-                        </div>
+                    </div>
+                    <div
+                      className="add"
+                      style={{
+                        display: displayStyle === item ? "flex" : "none",
+                      }}
+                    >
+                      <div className="addToCart">
+                        <button>Add to cart</button>
+                        <img src={cart} alt="" />
+                      </div>
+                      <div className="eye">
+                        <img src={eye} alt="" />
                       </div>
                     </div>
                   </div>
                 </div>
-              )
-          )}
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </>

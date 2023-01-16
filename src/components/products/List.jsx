@@ -7,12 +7,15 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { storeContext } from "../../context/storeContext";
 
-function List({ item }) {
+function List({ item, check1, check2 }) {
   const [displayStyle, setStyle] = useState("");
   let { favorites, setFavorites } = useContext(storeContext);
 
   const getFavorites = (item) => {
     setFavorites([...favorites, item]);
+  };
+  const removeFav = (item) => {
+    setFavorites(favorites.filter((e) => e.id !== item.id));
   };
   return (
     <>
@@ -32,11 +35,17 @@ function List({ item }) {
           >
             <img src={item.image} alt={item.title} className="main-img" />
           </Link>
-          <img
-            onClick={() => getFavorites(item)}
-            className="heartImg"
-            src={heart}
-          />
+          {check1 || check2 ? (
+            <i
+              className="fa-solid fa-heart-crack heartImg"
+              onClick={() => removeFav(item)}
+            ></i>
+          ) : (
+            <i
+              className="fa-solid fa-heart heartImg"
+              onClick={() => getFavorites(item)}
+            ></i>
+          )}
         </div>
         <div className="card-bottom">
           <div

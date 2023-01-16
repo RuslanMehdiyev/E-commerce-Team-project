@@ -14,5 +14,6 @@
 
 .heartImg {
   position: absolute;
-  width: 30px;
+  width: 40px;
+  font-size: 2rem;
 }
