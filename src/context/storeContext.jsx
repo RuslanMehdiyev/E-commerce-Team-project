@@ -9,6 +9,10 @@ export const StoreProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState("electronics");
 
+  const removeFav = (item) => {
+    setFavorites(favorites.filter((e) => e.id !== item.id));
+  };
+
   const values = {
     favorites,
     setFavorites,
@@ -22,6 +26,7 @@ export const StoreProvider = ({ children }) => {
     setFilteredData,
     selectedCategories,
     setSelectedCategories,
+    removeFav,
   };
 
   return (

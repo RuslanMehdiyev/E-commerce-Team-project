@@ -13,7 +13,6 @@ function ProductsItems() {
     data,
     setFilterBy,
     favorites,
-    setFavorites,
   } = useContext(storeContext);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
@@ -65,12 +64,12 @@ function ProductsItems() {
           {filteredData
             ? filteredData.map((item) => {
                 let check1 = favorites.find((t) => t.id == item.id);
-                return <List item={item} key={item.id} check1={check1}/>;
+                return <List item={item} key={item.id} check1={check1} />;
               })
             : data &&
               data.map((item) => {
                 let check2 = favorites.find((t) => t.id == item.id);
-                return <List item={item} key={item.id} check2={check2}/>;
+                return <List item={item} key={item.id} check2={check2} />;
               })}
         </div>
       </div>

@@ -9,14 +9,12 @@ import { storeContext } from "../../context/storeContext";
 
 function List({ item, check1, check2 }) {
   const [displayStyle, setStyle] = useState("");
-  let { favorites, setFavorites } = useContext(storeContext);
+  const { favorites, setFavorites, removeFav } = useContext(storeContext);
 
   const getFavorites = (item) => {
     setFavorites([...favorites, item]);
   };
-  const removeFav = (item) => {
-    setFavorites(favorites.filter((e) => e.id !== item.id));
-  };
+
   return (
     <>
       <div
