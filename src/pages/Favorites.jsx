@@ -17,7 +17,7 @@ function Favorites() {
 
   return (
     <>
-      <button onClick={clearAll} className={styles.burgerBtn}>
+      <button onClick={clearAll} className={styles.descriptionBtn}>
         {" "}
         Clear Favorites
       </button>
