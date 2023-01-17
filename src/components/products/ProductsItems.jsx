@@ -12,6 +12,7 @@ function ProductsItems() {
     data,
     setFilterBy,
     favorites,
+    setLoad,
   } = useContext(storeContext);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
