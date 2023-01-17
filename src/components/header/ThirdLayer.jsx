@@ -87,7 +87,6 @@ function ThirdLayer() {
           <h2>Products</h2>
         </Link>
 
-        <h2> Blog </h2>
         <h2> About Us </h2>
       </Box>
       <Box

@@ -12,7 +12,8 @@
 }
 /* responsive */
 
-body {
-  width: 100%;
-  overflow-x: hidden;
+.heartImg {
+  position: absolute;
+  width: 40px;
+  font-size: 2rem;
 }

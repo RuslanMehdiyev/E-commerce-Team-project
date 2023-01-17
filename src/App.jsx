@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Details from "./pages/Details";
 import Layout from "./Layout/Layout";
+import Favorites from "./pages/Favorites";
 
 function App() {
   const { setData, setCategories, setLoad } = useContext(storeContext);
@@ -28,6 +29,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="products" element={<Products />}></Route>
           <Route path="/products/:id" element={<Details />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Route>
       </Routes>
     </>

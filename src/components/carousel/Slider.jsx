@@ -12,8 +12,13 @@ import { Link } from "react-router-dom";
 import Load from "../loading/Load";
 
 function PopularProd() {
-  const { data, selectedCategories, load } = useContext(storeContext);
+  const { data, selectedCategories, favorites, setFavorites, removeFav } =
+    useContext(storeContext);
   const [displayStyle, setStyle] = useState("");
+
+  const getFavorites = (item) => {
+    setFavorites([...favorites, item]);
+  };
 
   const settings = {
     dots: true,
@@ -54,89 +59,98 @@ function PopularProd() {
 
   return (
     <>
-      {load ? (
-        <Load />
-      ) : (
-        <div className="container">
-          <Slider {...settings}>
-            {data.map(
-              (item) =>
-                item.category === selectedCategories && (
-                  <Link
-                    key={item.id}
-                    style={{
-                      color: "black",
+      <div className="container">
+        <Slider {...settings}>
+          {data.map((item) => {
+            let check = favorites.find((e) => e.id === item.id);
+            return (
+              item.category === selectedCategories && (
+                <div className="card" key={item.id}>
+                  <div
+                    className="card-content"
+                    onMouseEnter={() => {
+                      setStyle(item);
                     }}
-                    to={`/products/${item.id}`}
+                    onMouseLeave={() => setStyle("false")}
                   >
-                    <div className="card">
-                      <div
-                        className="card-content"
-                        onMouseEnter={() => {
-                          setStyle(item);
+                    <div className="ca  rd-top">
+                      <Link
+                        key={item.id}
+                        style={{
+                          color: "black",
                         }}
-                        onMouseLeave={() => setStyle("false")}
-                        onClick={() => window.scrollTo(180, 180)}
+                        to={`/products/${item.id}`}
                       >
-                        <div className="card-top">
-                          <img
-                            src={item.image}
-                            alt={item.title}
-                            className="main-img"
-                          />
-                          <img src={heart} alt="" className="vector-heart" />
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="main-img"
+                        />
+                      </Link>
+                      {check ? (
+                        <i
+                          className="fa-solid fa-heart-crack vector-heart"
+                          onClick={() => removeFav(item)}
+                        ></i>
+                      ) : (
+                        <img
+                          onClick={() => getFavorites(item)}
+                          src={heart}
+                          alt=""
+                          className="vector-heart"
+                        />
+                      )}
+                    </div>
+                    <div className="card-bottom">
+                      <div
+                        style={{
+                          display: displayStyle === item ? "none" : "",
+                        }}
+                      >
+                        <h2
+                          style={{
+                            color: "black",
+                          }}
+                        >
+                          {item.title.substring(0, 10)}
+                        </h2>
+                        <p
+                          style={{
+                            color: "black",
+                          }}
+                        >
+                          $ {item.price}
+                        </p>
+                        <div className="stars">
+                          <img src={star} />
+                          <img src={star} />
+                          <img src={star} />
+                          <img src={star} />
+                          <img src={star} />
                         </div>
-                        <div className="card-bottom">
-                          <div
-                            style={{
-                              display: displayStyle === item ? "none" : "",
-                            }}
-                          >
-                            <h2
-                              style={{
-                                color: "black",
-                              }}
-                            >
-                              {item.title.substring(0, 10)}
-                            </h2>
-                            <p
-                              style={{
-                                color: "black",
-                              }}
-                            >
-                              $ {item.price}
-                            </p>
-                            <div className="stars">
-                              <img src={star} />
-                              <img src={star} />
-                              <img src={star} />
-                              <img src={star} />
-                              <img src={star} />
-                            </div>
-                          </div>
-                          <div
-                            className="add"
-                            style={{
-                              display: displayStyle === item ? "flex" : "none",
-                            }}
-                          >
-                            <div className="addToCart">
-                              <button>Add to cart</button>
-                              <img src={cart} alt="" />
-                            </div>
-                            <div className="eye">
-                              <img src={eye} alt="" />
-                            </div>
-                          </div>
+                      </div>
+                      <div
+                        className="add"
+                        style={{
+                          display: displayStyle === item ? "flex" : "none",
+                        }}
+                      >
+                        <div className="addToCart">
+                          <button>Add to cart</button>
+                          <img src={cart} alt="" />
+                        </div>
+                        <div className="eye">
+                          <img src={eye} alt="" />
                         </div>
                       </div>
                     </div>
-                  </Link>
-                )
-            )}
-          </Slider>
-        </div>
-      )}
+                  </div>
+                </div>
+              )
+            );
+          })}
+        </Slider>
+      </div>
     </>
   );
 }
