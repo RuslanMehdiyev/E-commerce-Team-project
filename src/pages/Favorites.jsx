@@ -17,11 +17,20 @@ function Favorites() {
 
   return (
     <>
-      <button onClick={clearAll} className={styles.descriptionBtn}>
+      <button
+        style={{ cursor: "pointer" }}
+        onClick={clearAll}
+        className={styles.descriptionBtn}
+      >
         {" "}
         Clear Favorites
       </button>
-      <div>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr 1fr",
+        }}
+      >
         {favorites.length ? (
           favorites.map((item) => {
             return (
@@ -42,6 +51,9 @@ function Favorites() {
                       to={`/products/${item.id}`}
                     >
                       <img
+                        style={{
+                          width: "200px",
+                        }}
                         src={item.image}
                         alt={item.title}
                         className="main-img"

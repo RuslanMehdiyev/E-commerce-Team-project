@@ -8,12 +8,14 @@ export const StoreProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState("electronics");
-
+  const [load, setLoad] = useState(false);
   const removeFav = (item) => {
     setFavorites(favorites.filter((e) => e.id !== item.id));
   };
 
   const values = {
+    load,
+    setLoad,
     favorites,
     setFavorites,
     data,
