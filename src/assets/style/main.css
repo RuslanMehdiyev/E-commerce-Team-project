@@ -9,6 +9,8 @@
   text-decoration: none;
   list-style: none;
   font-family: Poppins;
+  overflow-x: hidden;
+  /* border: 4px solid black; */
 }
 /* responsive */
 
